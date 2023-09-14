@@ -11,6 +11,8 @@
     Sumar 2 matrices -> miMatriz.sum(<Matriz>, <String>) donde <String> debe ser '+' o '-'
     Multiplicar 2 matrices -> miMatriz.multiply(<Matriz>)
 
+    (En todos los casos se compueba que la operación sea realizable, no es necesario asegurarlo "a mano")
+
     LAS MATRICES PUESTAS DE EJEMPLO SON MULTIPLICABLES, PERO NO SUMABLES
 */
 
