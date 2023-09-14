@@ -1,3 +1,19 @@
+/*
+    COMO USAR:
+
+    1º Crear una matriz (const miMatriz = new Matrix(<Array>))
+
+    UTILIDADES:
+
+    Añadir una fila a la matriz -> miMatriz.addRow(<Array>)
+    Añadir una columna a la matriz -> miMatriz.addColumn(<Array>)
+    Multiplicar la matriz por una constante -> miMatriz.scalarMult(<Number>)
+    Sumar 2 matrices -> miMatriz.sum(<Matriz>, <String>) donde <String> debe ser '+' o '-'
+    Multiplicar 2 matrices -> miMatriz.multiply(<Matriz>)
+
+    LAS MATRICES PUESTAS DE EJEMPLO SON MULTIPLICABLES, PERO NO SUMABLES
+*/
+
 class Matrix {
     constructor(mat) {
         this.matrix = mat
