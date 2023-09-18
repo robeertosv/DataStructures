@@ -10,6 +10,7 @@
     Multiplicar la matriz por una constante -> miMatriz.scalarMult(<Number>)
     Sumar 2 matrices -> miMatriz.sum(<Matriz>, <String>) donde <String> debe ser '+' o '-'
     Multiplicar 2 matrices -> miMatriz.multiply(<Matriz>)
+    Calcular el cuadrado de la matriz -> miMatriz.square()
 
     (En todos los casos se compueba que la operación sea realizable, no es necesario asegurarlo "a mano")
 
@@ -22,12 +23,19 @@ class Matrix {
     }
 
     addRow(arr) {
+        if (this.matrix[0].length != arr.length) {
+            console.log("La fila debe contener el mismo número de números que las otras filas")
+            return
+        }
         this.matrix.push(arr) //Para añadir una fila a nuestra matriz sólo hace falta añadir un array al final de ella
     }
 
     //Para añadir una columna hay que añadir al final de cada línea el valor de la columna en la posición de la fila
     addColumn(arr) {
         let rows = this.matrix.length
+        let cols = arr.length;
+
+        if (rows != cols) { console.log("Debes poner una columna que tenga la misma cantidad de números que las demás columas"); return; }
 
         for (let i = 0; i < rows; i++) {
             this.matrix[i].push(arr[i])
@@ -93,7 +101,7 @@ class Matrix {
             console.log('LAS MATRICES NO PUEDEN SER MULTIPLICADAS')
             return
         }
-        
+
         const result = new Array(rows); //Array donde se irán guardando los valores según se vayan calculando
 
         //Multiplicar cada numero (fila * columna) y sumarlos entre ellos -> Ponerlos en la posición del Array temporal en la posición en la que corresponda
@@ -110,19 +118,18 @@ class Matrix {
         //Actualizar la matriz original con el resultado de la matriz nueva
         this.matrix = result
     }
+    square() {
+        this.multiply(this.matrix) //Multiplicar la matriz por si misma
+    }
 }
 
 let matriz = [
     [1, 2, 1],
-    [2, 0, 1]
-]
-let matriz2 = [
-    [1, 2],
-    [2, 1],
-    [0, 1]
+    [2, 0, 1],
+    [1, 2, 0]
 ]
 
 const m = new Matrix(matriz)
-m.multiply(matriz2)
+m.addRow([1, 2])
 
 console.log(m)
