@@ -17,12 +17,6 @@ public class Matrix {
                 { 2, 0, 1 },
         };
 
-        int[][] multiplicador = {
-                { 1, 2 },
-                { 2, 1 },
-                { 0, 1 }
-        };
-
         Matrix m = new Matrix(matriz); // Crear la matriz sobre la que se trabajará
         m.scalar(2);
     }
