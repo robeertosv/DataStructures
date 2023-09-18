@@ -88,6 +88,7 @@ public class Matrix {
         int oCols = multiplicador[0].length; // Número de columnas de la matriz por la que se va a multiplicar
 
         if (cols != oRows) {
+            System.out.println("LAS MATRICES NO PUEDEN SER MULTIPLICADAS");
             return;
         } // Comprobar si el número de columnas de la matriz tiene el mismo número de
           // filas que la segunda matriz, de modo que sean multiplicables
