@@ -3,6 +3,7 @@
  * Para sumar dos matrices matrizPrincipal.suma(<Matriz sumando>, operador) (Matriz sumando = int[][]) (operador<Char> -> '+' o '-')
  * Para multiplicar dos matrices matrixPrincipal.multiplicar(matrizB) (matrizB = int[][])
  * Para calcular el cuadrado de la matriz. matrizPrincipal.square()
+ * Para multiplicar una matriz por un número -> matrizPrincipal.scalar(<Integer>)
  * En el ejemplo aportado solo se definen dos matrices multiplicables
  */
 
@@ -23,7 +24,7 @@ public class Matrix {
         };
 
         Matrix m = new Matrix(matriz); // Crear la matriz sobre la que se trabajará
-        m.multiplicar(multiplicador);
+        m.scalar(2);
     }
 
     // Constructor de la class Matrix
@@ -43,6 +44,15 @@ public class Matrix {
         }
     }
 
+    public void scalar(int scalar) {
+        for(int i = 0; i<matrix.length; i++) {
+            for(int j = 0; j<matrix[0].length; j++) {
+                matrix[i][j] *= scalar;
+            }
+        }
+
+        WriteMatrix();
+    }
     // Sumar dos matrices
     public void suma(int[][] matrizB, char operador) {
         int rows = matrix.length; // Almacenar las filas de la matriz "principal"
