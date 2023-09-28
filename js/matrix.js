@@ -123,12 +123,14 @@ class Matrix {
     }
 }
 
+//Esta matriz es solo una de demostración, para usar todas las funcionalidades se deben crear más matrices, que además deben ser las apropiadas para cada tipo de operación
 let matriz = [
     [1, 2, 1],
     [2, 0, 1],
     [1, 2, 0]
 ]
 
+//Crear una instacia de la matriz
 const m = new Matrix(matriz)
 m.addRow([1, 2])
 
