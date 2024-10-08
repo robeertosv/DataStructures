@@ -1,13 +1,13 @@
 #include "NodoPila.h"
 
-NodoPila::NodoPila() {
+Nodo::Nodo() {
 	value = 0;
 	next = NULL;
 }
 
-NodoPila::NodoPila(int v, NodoPila* sig) {
+Nodo::Nodo(int v, Nodo* sig) {
 	value = v;
 	next = sig;
 }
 
-NodoPila::~NodoPila() {}
+Nodo::~Nodo() {}

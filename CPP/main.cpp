@@ -1,25 +1,30 @@
-#include "NodoPila.h"
-#include "NodoPila.cpp"
+#include "Nodo.h"
+#include "Nodo.cpp"
 #include "Pila.h"
 #include "Pila.cpp"
 #include <iostream>
+
 using namespace std;
 
 int main() {
-	cout << "Crear pila vacía: " << endl;
-	Pila p; p.viewCima();
+	Pila p;
 
-	cout << "Añadir el 1 a la pila: " << endl;
-	p.push(1); p.viewCima();
+	p.push(1);
+	p.push(2);
+	p.push(3);
 
-	cout << "Añadir el 2 a la pila: " << endl;
-	p.push(2); p.viewCima();
+	Pila sec;
 
-	cout << "Pop: " << endl;
-	p.pop(); p.viewCima();
-       
-	cout << "Pop: " << endl;
-	p.pop(); p.viewCima();
+	sec.push(4); 
+	sec.push(5); 
+	sec.push(6); 
+	
+	cout << "Concatenar: " << endl;
+	p.concat(sec);
+	
+	p.reverse();
+	p.showAll();
+	cout << p.isOrder() << endl;
 
 	return 0;
 }

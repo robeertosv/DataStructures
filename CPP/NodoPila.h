@@ -1,19 +1,18 @@
 #ifndef NODOPILA_H
 #define NODOPILA_H
-
 #include <iostream>
 
-class NodoPila {
+class Nodo {
 	private:
 		int value;
-		NodoPila* next;
+		Nodo* next;
 		friend class Pila;
 	public:
-		NodoPila();
-		NodoPila(int v, NodoPila* sig = NULL);
-		~NodoPila();
+		Nodo();
+		Nodo(int v, Nodo* sig = NULL);
+		~Nodo();
 };
 
-typedef NodoPila* pnodo;
+typedef Nodo* pnodo;
 
 #endif
